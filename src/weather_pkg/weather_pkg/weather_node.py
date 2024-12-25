@@ -42,7 +42,7 @@ class WeatherNode(Node):
         msg = String()
         msg.data = f"{weather_tokyo}\n\n{weather_dalian}"
         self.publisher_.publish(msg)
-        
+
         # 天気情報を1回だけ表示
         self.get_logger().info(f'Publishing weather info: {msg.data}')
 
@@ -55,4 +55,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-

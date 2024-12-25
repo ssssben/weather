@@ -10,47 +10,41 @@ class WeatherNode(Node):
         self.publisher_ = self.create_publisher(String, 'weather_info', 10)
         self.timer = self.create_timer(10, self.publish_weather)
 
-    def get_weather(self):
-        # APIキーを環境変数から取得
+    def get_weather(self, city):
+        # 環境変数からAPIキーを取得
         api_key = os.getenv('OPENWEATHERMAP_API_KEY', None)
         if not api_key:
             self.get_logger().error("API key is missing!")
-            return "API key is missing!"
+            return f"API key is missing for {city}!"
 
-        city = 'Tokyo'
         url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
 
         try:
             response = requests.get(url)
             data = response.json()
 
-            # APIレスポンスの内容をデバッグ出力
-            self.get_logger().info(f"API Response: {data}")
-
             if response.status_code == 200:
-                if 'main' in data and 'temp' in data['main']:
-                    temperature = data['main']['temp']
-                    description = data['weather'][0]['description']
-                    # 見やすくフォーマットされた天気情報を返す
-                    return (f"Weather in {city}:\n"
-                            f"Temperature: {temperature:.1f}°C\n"
-                            f"Condition: {description.capitalize()}")
-                else:
-                    self.get_logger().error("Response data format is incorrect or missing 'main' key.")
-                    return "Invalid weather data format"
+                temperature = data['main']['temp']
+                description = data['weather'][0]['description']
+                return f"Weather in {city}:\nTemperature: {temperature:.1f}°C\nCondition: {description.capitalize()}"
             else:
-                self.get_logger().error(f"Failed to get weather data: {data.get('message', 'Unknown error')}")
-                return f"Failed to get weather data: {data.get('message', 'Unknown error')}"
+                self.get_logger().error(f"Failed to get weather data for {city}: {data.get('message', 'Unknown error')}")
+                return f"Failed to get weather data for {city}: {data.get('message', 'Unknown error')}"
         except requests.exceptions.RequestException as e:
-            self.get_logger().error(f"Error fetching weather data: {e}")
-            return f"Failed to get weather data: {e}"
+            self.get_logger().error(f"Error fetching weather data for {city}: {e}")
+            return f"Failed to get weather data for {city}: {e}"
 
     def publish_weather(self):
-        weather_info = self.get_weather()
+        # 東京と大連の天気情報を取得
+        weather_tokyo = self.get_weather('Tokyo')
+        weather_dalian = self.get_weather('Dalian')
+
         msg = String()
-        msg.data = weather_info
+        msg.data = f"{weather_tokyo}\n\n{weather_dalian}"
         self.publisher_.publish(msg)
-        self.get_logger().info(f'Publishing weather info:\n{weather_info}')
+
+        # 天気情報を1回だけ表示
+        self.get_logger().info(f'Publishing weather info: {msg.data}')
 
 def main(args=None):
     rclpy.init(args=args)
@@ -61,4 +55,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
