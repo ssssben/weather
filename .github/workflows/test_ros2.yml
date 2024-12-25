@@ -1,0 +1,47 @@
+name: ROS2 Node Test Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up ROS 2
+        uses: ros-tooling/setup-ros@v0.1
+        with:
+          distro: humble
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y python3-colcon-common-extensions
+          sudo apt install -y python3-pip
+          pip3 install -r requirements.txt
+
+      - name: Build ROS2 workspace
+        run: |
+          mkdir -p ~/ros2_ws/src
+          cp -r . ~/ros2_ws/src/
+          cd ~/ros2_ws
+          source /opt/ros/humble/setup.bash
+          colcon build --symlink-install
+          source install/setup.bash
+
+      - name: Set OpenWeatherMap API Key
+        run: echo "OPENWEATHERMAP_API_KEY=${{ secrets.OPENWEATHERMAP_API_KEY }}" >> $GITHUB_ENV
+
+      - name: Run tests using test.bash
+        run: |
+          chmod +x ./test.bash
+          ./test.bash
+

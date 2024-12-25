@@ -1,15 +1,18 @@
 #!/bin/bash
 
-# Exit on any error
-set -e
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
 
-echo "Running tests..."
+ros2 run weather_pkg weather_node &
 
-# Example: ROS 2 environment setup and test execution
-source /opt/ros/foxy/setup.bash
-colcon build
-colcon test
-colcon test-result --verbose
+sleep 10
 
-echo "All tests passed successfully."
+ros2 topic echo /weather_info --once
+
+if [ $? -ne 0 ]; then
+    echo "Error: Topic /weather_info was not published successfully!"
+    exit 1
+fi
+
+echo "Test passed: Weather info published successfully"
 
