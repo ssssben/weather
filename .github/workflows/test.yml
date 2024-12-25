@@ -19,14 +19,14 @@ jobs:
       - name: Set up ROS 2
         uses: ros-tooling/setup-ros@v0.2
         with:
-          required-ros-distributions: humble
+          required-ros-distributions: humble  # 使用するROS2のディストリビューションを指定
 
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y python3-colcon-common-extensions
           sudo apt install -y python3-pip
-          pip3 install -r requirements.txt
+          pip3 install -r requirements.txt  # もしrequirements.txtがある場合
 
       - name: Build ROS2 workspace
         run: |
@@ -42,6 +42,6 @@ jobs:
 
       - name: Run tests using test.bash
         run: |
-          chmod +x ./test.bash
-          ./test.bash
+          chmod +x ./test.bash  # 実行権限を付与
+          ./test.bash  # test.bashを実行
 
