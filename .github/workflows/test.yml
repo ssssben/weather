@@ -1,6 +1,6 @@
 name: test
 
-on: 
+on:
   push:
     branches:
       - main
@@ -17,26 +17,31 @@ jobs:
         run: |
           source /opt/ros/foxy/setup.bash
           mkdir -p /root/ros2_weather_ws/src
-          
+        shell: bash  # シェルをbashに設定
+
       - name: Copy source code to workspace
         run: |
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+        shell: bash  # シェルをbashに設定
 
       - name: Install dependencies
         run: |
           source /opt/ros/foxy/setup.bash
           rosdep update
           rosdep install --from-paths /root/ros2_weather_ws/src --ignore-src -r -y
+        shell: bash  # シェルをbashに設定
 
       - name: Build the package
         run: |
           source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
           colcon build --symlink-install
+        shell: bash  # シェルをbashに設定
 
       - name: Run tests
         run: |
           source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
           bash -xv ./src/weather_pkg/test/test.bash /root
+        shell: bash  # シェルをbashに設定
 
