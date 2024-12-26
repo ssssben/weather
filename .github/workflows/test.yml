@@ -5,12 +5,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y python3-colcon-common-extensions
-          sudo apt install -y python3-rosdep
-          rosdep update
       - name: Build and test
         run: |
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/

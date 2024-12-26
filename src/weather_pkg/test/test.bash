@@ -7,7 +7,7 @@ cd $dir/ros2_ws
 
 colcon build
 
-source $dir/ros2_ws/install/setup.bash
+source $dir/ros2_weather_ws/install/setup.bash
 
 export OPENWEATHERMAP_API_KEY="7c8ebb86284de8568f27c0e05f1cd4ac"
 
