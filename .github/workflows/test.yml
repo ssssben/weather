@@ -56,6 +56,6 @@ jobs:
         run: |
           source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
-          python3 -m pytest src/weather_pkg/test/test_weather_node.py  # pytestをpython3モジュールとして実行
+          python3 -m pytest src/weather_pkg/test/test_weather_node.py  # 正しいパスに修正
         shell: bash
 
