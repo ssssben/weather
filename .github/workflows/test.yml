@@ -1,41 +1,42 @@
 name: Test Weather Node
-on: push
+
+on:
+  push:
+    branches:
+      - main  # mainブランチへのプッシュ時に実行
+  pull_request:
+    branches:
+      - main  # mainブランチへのPR時に実行
+
 jobs:
   test:
-    runs-on: ubuntu-22.04
-    container: ros:foxy-ros-base  # コンテナを使用する
+    runs-on: ubuntu-22.04  # Ubuntu 22.04環境で実行
+
+    container: ryuichiueda/ubuntu22.04-ros2:latest  # ROS2がインストールされたコンテナを使用
 
     steps:
-      - uses: actions/checkout@v2  # リポジトリをクローン
+      # リポジトリのコードをチェックアウト
+      - uses: actions/checkout@v2
 
-      - name: Install rsync
+      # ビルドとテストを実行
+      - name: Build and Test
         run: |
-          sudo apt-get update
-          sudo apt-get install -y rsync  # rsyncをインストール
-
-      - name: Build and test
-        run: |
-          # リポジトリのコードを ROS 2 ワークスペースにコピー
-          sudo mkdir -p /root/ros2_weather_ws/src/weather_pkg/
+          # リポジトリ内のコードをコンテナ内にコピー
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
 
-          # ワークスペースのディレクトリに移動
-          cd /root/ros2_weather_ws
+          # 作業ディレクトリに移動
+          cd /root/ros2_ws
 
-          # 依存関係のインストール
+          # rosdepで依存関係をインストール
+          rosdep update
           rosdep install --from-paths src --ignore-src -r -y
 
-          # colconでビルド
+          # ROS2ワークスペースをビルド
           colcon build
 
-          # ROS 2 環境のセットアップ
-          source install/setup.bash
+          # test.bashスクリプトを実行
+          bash ./src/weather_pkg/test/test.bash  # test.bashを実行して、ノードのテストを行う
 
-          # 直接APIキーを設定
-          export OPENWEATHERMAP_API_KEY="7c8ebb86284de8568f27c0e05f1cd4ac"
-
-          # ノードを実行
-          timeout 30 ros2 run weather_pkg weather_node
-
-          echo "テストが完了しました。"
+          # テスト結果の表示
+          colcon test-result --verbose
 
