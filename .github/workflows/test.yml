@@ -13,10 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install rsync
+      - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y rsync
+          apt-get install -y rsync python3-pip
+          pip install pytest  # pytestをインストール
         shell: bash  # シェルをbashに設定
 
       - name: Set up ROS 2 workspace
@@ -30,13 +31,6 @@ jobs:
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
         shell: bash  # シェルをbashに設定
 
-      - name: Build the package
-        run: |
-          source /opt/ros/foxy/setup.bash
-          cd /root/ros2_weather_ws
-          colcon build --symlink-install
-        shell: bash  # シェルをbashに設定
-
       - name: Install dependencies
         run: |
           source /opt/ros/foxy/setup.bash
@@ -44,10 +38,17 @@ jobs:
           rosdep install --from-paths /root/ros2_weather_ws/src --ignore-src -r -y
         shell: bash  # シェルをbashに設定
 
+      - name: Build the package
+        run: |
+          source /opt/ros/foxy/setup.bash
+          cd /root/ros2_weather_ws
+          colcon build --symlink-install
+        shell: bash  # シェルをbashに設定
+
       - name: Run tests
         run: |
           source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
-          bash -xv ./src/weather_pkg/test/test.bash /root
+          pytest src/weather_pkg/test/test_weather_node.py  # pytestを使ってテストを実行
         shell: bash  # シェルをbashに設定
 
