@@ -8,6 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2  # リポジトリをクローン
 
+      - name: Install rsync
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync  # rsyncをインストール
+
       - name: Build and test
         run: |
           # リポジトリのコードを ROS 2 ワークスペースにコピー
