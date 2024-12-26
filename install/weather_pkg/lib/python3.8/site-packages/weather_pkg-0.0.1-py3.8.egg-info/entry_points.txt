@@ -1,3 +1,0 @@
-[console_scripts]
-weather_node = weather_pkg.weather_node:main
-

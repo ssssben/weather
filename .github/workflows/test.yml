@@ -31,7 +31,7 @@ jobs:
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
         shell: bash  # シェルをbashに設定
 
-      - name: Install dependencies
+      - name: Install ROS dependencies
         run: |
           source /opt/ros/foxy/setup.bash
           rosdep update
