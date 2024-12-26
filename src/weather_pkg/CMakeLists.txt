@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 project(weather_pkg)
-
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
@@ -10,7 +9,6 @@ install(PROGRAMS
 )
 ament_python_install_package()
 if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
   find_package(pytest REQUIRED)
   add_test(
     NAME test_weather_node
