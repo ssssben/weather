@@ -38,6 +38,11 @@ jobs:
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
         shell: bash
 
+      - name: Check the contents of the src/weather_pkg/test directory
+        run: |
+          ls -l /root/ros2_weather_ws/src/weather_pkg/test  # testディレクトリ内のファイルを確認
+        shell: bash
+
       - name: Install dependencies
         run: |
           source /opt/ros/foxy/setup.bash
@@ -55,7 +60,7 @@ jobs:
       - name: Run tests
         run: |
           source /opt/ros/foxy/setup.bash
-          cd /root/ros2_weather_ws
-          python3 -m pytest src/weather_pkg/test/test_weather_node.py  # 正しいパスに修正
+          cd /root/ros2_weather_ws/src/weather_pkg/test  # test フォルダに移動
+          python3 -m pytest test_weather_node.py  # 正しいテストファイルを指定
         shell: bash
 
