@@ -8,12 +8,12 @@ find_package(std_msgs REQUIRED)
 
 # Python パッケージをインストールする
 install(PROGRAMS
-  scripts/weather_node.py
+  weather_pkg/weather_node.py  # 正しいディレクトリパスに変更
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# Pythonパッケージのインストールを有効化
-ament_python_install_package(${PROJECT_NAME})
+# Python パッケージのインストールを有効化
+ament_python_install_package()
 
 ament_package()
 
