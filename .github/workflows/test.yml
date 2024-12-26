@@ -13,6 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install rsync
+        run: |
+          apt-get update
+          apt-get install -y rsync
+        shell: bash  # シェルをbashに設定
+
       - name: Set up ROS 2 workspace
         run: |
           source /opt/ros/foxy/setup.bash
