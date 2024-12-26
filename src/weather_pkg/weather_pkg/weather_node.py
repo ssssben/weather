@@ -11,7 +11,6 @@ class WeatherNode(Node):
         self.publisher_ = self.create_publisher(String, 'weather_info', 10)
         self.timer = self.create_timer(10, self.publish_weather)
 
-        # APIキーを環境変数から取得
         self.api_key = os.getenv('OPENWEATHERMAP_API_KEY')
         if not self.api_key:
             self.get_logger().error("API key is missing! Please set the OPENWEATHERMAP_API_KEY environment variable.")

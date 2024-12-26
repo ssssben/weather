@@ -1,6 +1,6 @@
-name: ROS2 Weather Node Test
+name: test
 
-on:
+on: 
   push:
     branches:
       - main
@@ -8,23 +8,35 @@ on:
 jobs:
   test:
     runs-on: ubuntu-22.04
-    container: ryuichiueda/ubuntu22.04-ros2:latest
+    container: ros:foxy
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Set up ROS 2
-        run: |
-          sudo apt update
-          sudo apt install -y python3-colcon-common-extensions python3-pip
-          pip install -r requirements.txt
-
-      - name: Build and test package
+      - name: Set up ROS 2 workspace
         run: |
           source /opt/ros/foxy/setup.bash
-          source /root/ros2_weather_ws/install/setup.bash
+          mkdir -p /root/ros2_weather_ws/src
+          
+      - name: Copy source code to workspace
+        run: |
+          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+
+      - name: Install dependencies
+        run: |
+          source /opt/ros/foxy/setup.bash
+          rosdep update
+          rosdep install --from-paths /root/ros2_weather_ws/src --ignore-src -r -y
+
+      - name: Build the package
+        run: |
+          source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
-          colcon build --packages-select weather_pkg
-          pytest src/weather_pkg/test/test_weather_node.py
+          colcon build --symlink-install
+
+      - name: Run tests
+        run: |
+          source /opt/ros/foxy/setup.bash
+          cd /root/ros2_weather_ws
+          bash -xv ./src/weather_pkg/test/test.bash /root
 
