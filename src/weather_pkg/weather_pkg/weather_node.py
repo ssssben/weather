@@ -3,6 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 import requests
 import os
+from unittest.mock import patch
 
 class WeatherNode(Node):
     def __init__(self):
@@ -10,6 +11,7 @@ class WeatherNode(Node):
         self.publisher_ = self.create_publisher(String, 'weather_info', 10)
         self.timer = self.create_timer(10, self.publish_weather)
 
+        # APIキーを環境変数から取得
         self.api_key = os.getenv('OPENWEATHERMAP_API_KEY')
         if not self.api_key:
             self.get_logger().error("API key is missing! Please set the OPENWEATHERMAP_API_KEY environment variable.")
@@ -39,6 +41,7 @@ class WeatherNode(Node):
 
         self.get_logger().info(f'\nPublishing weather info:\n{msg.data}')
 
+
 def main(args=None):
     rclpy.init(args=args)
     weather_node = WeatherNode()
@@ -48,4 +51,5 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
 

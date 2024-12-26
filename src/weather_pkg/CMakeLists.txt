@@ -5,11 +5,15 @@ find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(weather_node src/weather_node.py)
-
 install(PROGRAMS
-  src/weather_node.py
+  scripts/weather_node.py
   DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_python_install_package()
+
+ament_add_gtest(test_weather_node
+  test/test_weather_node.py
 )
 
 ament_package()
