@@ -17,7 +17,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y rsync python3-pip
-          pip install pytest  # pytestをインストール
+          pip3 install pytest  # pytestをインストール
         shell: bash  # シェルをbashに設定
 
       - name: Set up ROS 2 workspace
@@ -31,7 +31,7 @@ jobs:
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
         shell: bash  # シェルをbashに設定
 
-      - name: Install ROS dependencies
+      - name: Install dependencies
         run: |
           source /opt/ros/foxy/setup.bash
           rosdep update
