@@ -5,7 +5,8 @@ package_name = 'weather_pkg'
 setup(
     name=package_name,
     version='0.0.1',
-        'requests',  # requestsパッケージが必要なので追加
+    install_requires=[
+        'requests',
     ],
     data_files=[
         ('share/ament_index/resource_index/packages',
