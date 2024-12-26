@@ -1,17 +1,12 @@
 #!/bin/bash
 
-dir=~
-[ "$1" != "" ] && dir="$1"
+WORKSPACE_DIR="/root/ros2_ws"
 
-cd $dir/ros2_ws
-
-colcon build
-
-source $dir/ros2_weather_ws/install/setup.bash
+source $WORKSPACE_DIR/install/setup.bash
 
 export OPENWEATHERMAP_API_KEY="7c8ebb86284de8568f27c0e05f1cd4ac"
 
-timeout 30 ros2 run mypkg weather_node
+timeout 30 ros2 run weather_pkg weather_node
 
 echo "テストが完了しました。"
 
