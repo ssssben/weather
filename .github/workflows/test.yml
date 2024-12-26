@@ -10,7 +10,7 @@ jobs:
         run: |
           apt-get update && apt-get install -y \
           python3-rosdep \
-          ros-foxy-desktop # 必要なパッケージがあれば追加
+          ros-humble-desktop  # Humbleを使用
       - name: Initialize rosdep
         run: |
           rosdep init
