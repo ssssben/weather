@@ -21,11 +21,14 @@ jobs:
       # ビルドとテストを実行
       - name: Build and Test
         run: |
+          # ROS2ワークスペースのディレクトリを作成
+          mkdir -p /root/ros2_weather_ws/src/weather_pkg/
+
           # リポジトリ内のコードをコンテナ内にコピー
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
 
           # 作業ディレクトリに移動
-          cd /root/ros2_ws
+          cd /root/ros2_weather_ws
 
           # rosdepで依存関係をインストール
           rosdep update
@@ -34,8 +37,8 @@ jobs:
           # ROS2ワークスペースをビルド
           colcon build
 
-          # test.bashスクリプトを実行
-          bash ./src/weather_pkg/test/test.bash  # test.bashを実行して、ノードのテストを行う
+          # test.bashスクリプトを実行して、ノードのテストを行う
+          bash ./src/weather_pkg/test/test.bash
 
           # テスト結果の表示
           colcon test-result --verbose
