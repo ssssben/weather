@@ -1,0 +1,23 @@
+name: Test Weather Node
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y python3-colcon-common-extensions
+          sudo apt install -y python3-rosdep
+          rosdep update
+      - name: Build and test
+        run: |
+          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+          cd /root/ros2_ws
+          rosdep install --from-paths src --ignore-src -r -y
+          colcon build
+          source install/setup.bash
+          export OPENWEATHERMAP_API_KEY="7c8ebb86284de8568f27c0e05f1cd4ac"  
+          timeout 30 ros2 run mypkg weather_node
+
