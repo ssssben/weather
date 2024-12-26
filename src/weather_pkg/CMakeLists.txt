@@ -4,17 +4,19 @@ project(weather_pkg)
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
-
 install(PROGRAMS
   scripts/weather_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
-
 ament_python_install_package()
-
-ament_add_gtest(test_weather_node
-  test/test_weather_node.py
-)
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  find_package(pytest REQUIRED)
+  add_test(
+    NAME test_weather_node
+    COMMAND pytest ${CMAKE_CURRENT_SOURCE_DIR}/test/test_weather_node.py
+  )
+endif()
 
 ament_package()
 
