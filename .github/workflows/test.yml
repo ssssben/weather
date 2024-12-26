@@ -1,13 +1,26 @@
 name: test
 on: push
 jobs:
-        test:
-                runs-on: ubuntu-22.04
-                container: ryuichiueda/ubuntu22.04-ros2:latest
-                steps:
-                        - uses: actions/checkout@v2
-                          - name: build and test
-                            run: |
-                                     rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
-                                     cd /root/ros2_weather_ws
-                                     bash -xv ./src/ros2_weather_ws/test/test.bash /root
+  test:
+    runs-on: ubuntu-22.04
+    container: ryuichiueda/ubuntu22.04-ros2:latest
+    steps:
+      - uses: actions/checkout@v2  # リポジトリをコンテナにチェックアウト
+      - name: Install dependencies
+        run: |
+          apt-get update && apt-get install -y \
+          python3-rosdep \
+          ros-foxy-desktop # 必要なパッケージがあれば追加
+      - name: Initialize rosdep
+        run: |
+          rosdep init
+          rosdep update
+      - name: Build and test
+        run: |
+          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/  # リポジトリの内容をコンテナ内にコピー
+          cd /root/ros2_weather_ws
+          rosdep install --from-paths src --ignore-src -r -y  # 必要な依存関係をインストール
+          colcon build  # ビルドを実行（もし必要であれば）
+          source /root/ros2_weather_ws/install/setup.bash  # ROS環境をセットアップ
+          bash -xv ./src/ros2_weather_ws/test/test.bash  # スクリプトを実行
+
