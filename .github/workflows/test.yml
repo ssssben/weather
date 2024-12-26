@@ -17,12 +17,12 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y python3-colcon-common-extensions python3-rosdep
+          sudo apt install -y python3-colcon-common-extensions python3-rosdep rsync
           rosdep update
 
       - name: Build and test
         run: |
-          rsync -av ./ /root/ros2_ws/src/weather_pkg/
+          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
 
           cd /root/ros2_ws
 
