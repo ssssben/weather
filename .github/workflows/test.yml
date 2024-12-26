@@ -7,11 +7,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and test
         run: |
-          sudo mkdir -p /root/ros2_weather_ws/src/weather_pkg/
+          sudo mkdir -p /home/ubuntu/ros2_weather_ws/src/weather_pkg/
 
-          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+          rsync -av ./ /home/ubuntu/ros2_weather_ws/src/weather_pkg/
 
-          cd /root/ros2_weather_ws
+          cd /home/ubuntu/ros2_weather_ws
 
           rosdep install --from-paths src --ignore-src -r -y
 
