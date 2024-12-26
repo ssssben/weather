@@ -3,25 +3,40 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-22.04
-    container: ros:foxy-ros-base  # ここでコンテナイメージを指定
     steps:
       - uses: actions/checkout@v2
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y python3-colcon-common-extensions
+          sudo apt install -y python3-rosdep
+          sudo apt install -y rsync  # rsyncをインストール
+          rosdep update
+
       - name: Build and test
         run: |
+          # リポジトリのコードを ROS 2 ワークスペースにコピー
           sudo mkdir -p /root/ros2_weather_ws/src/weather_pkg/
-
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
 
+          # ワークスペースのディレクトリに移動
           cd /root/ros2_weather_ws
 
+          # 依存関係のインストール
           rosdep install --from-paths src --ignore-src -r -y
 
+          # colconでビルド
           colcon build
 
+          # ROS 2 環境のセットアップ
           source install/setup.bash
 
+          # GitHub SecretsからAPIキーを取得
           export OPENWEATHERMAP_API_KEY="7c8ebb86284de8568f27c0e05f1cd4ac"
 
+          # ノードを実行
           timeout 30 ros2 run weather_pkg weather_node
 
           echo "テストが完了しました。"
