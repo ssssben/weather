@@ -1,0 +1,35 @@
+[0.016s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[0.344s] -- The C compiler identification is GNU 9.4.0
+[0.564s] -- The CXX compiler identification is GNU 9.4.0
+[0.621s] -- Check for working C compiler: /usr/bin/cc
+[0.727s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.730s] -- Detecting C compiler ABI info
+[0.819s] -- Detecting C compiler ABI info - done
+[0.827s] -- Detecting C compile features
+[0.827s] -- Detecting C compile features - done
+[0.830s] -- Check for working CXX compiler: /usr/bin/c++
+[0.919s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.920s] -- Detecting CXX compiler ABI info
+[1.003s] -- Detecting CXX compiler ABI info - done
+[1.010s] -- Detecting CXX compile features
+[1.010s] -- Detecting CXX compile features - done
+[1.032s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.059s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[1.059s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.225s] -- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+[1.227s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[1.326s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.335s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.842s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[2.273s] -- Found FastRTPS: /opt/ros/foxy/include  
+[3.171s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.235s] CMake Error at /opt/ros/foxy/share/ament_cmake_python/cmake/ament_python_install_package.cmake:28 (_ament_cmake_python_install_package):
+[3.236s]   _ament_cmake_python_install_package Function invoked with incorrect
+[3.236s]   arguments for function named: _ament_cmake_python_install_package
+[3.236s] Call Stack (most recent call first):
+[3.236s]   CMakeLists.txt:10 (ament_python_install_package)
+[3.236s] 
+[3.236s] 
+[3.277s] -- Configuring incomplete, errors occurred!
+[3.277s] See also "/home/bun/ros2_weather_ws/build/weather_pkg/CMakeFiles/CMakeOutput.log".
+[3.282s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '1': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
