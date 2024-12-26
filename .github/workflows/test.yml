@@ -17,12 +17,13 @@ jobs:
         run: |
           apt-get update
           apt-get install -y rsync python3-pip
-          pip3 install pytest  # pip3を使ってpytestをインストール
+          pip3 install --upgrade pip
+          pip3 install pytest
         shell: bash
 
       - name: Check pytest installation
         run: |
-          which pytest || echo "pytest not found"
+          pytest --version || echo "pytest not found"
         shell: bash
 
       - name: Set up ROS 2 workspace
