@@ -38,7 +38,12 @@ jobs:
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
         shell: bash
 
-      - name: Check the contents of the src/weather_pkg/test directory
+      - name: Check the contents of the /root/ros2_weather_ws/src/weather_pkg directory
+        run: |
+          ls -l /root/ros2_weather_ws/src/weather_pkg  # weather_pkgディレクトリ内のファイルを確認
+        shell: bash
+
+      - name: Check the contents of the /root/ros2_weather_ws/src/weather_pkg/test directory
         run: |
           ls -l /root/ros2_weather_ws/src/weather_pkg/test  # testディレクトリ内のファイルを確認
         shell: bash
@@ -47,20 +52,5 @@ jobs:
         run: |
           source /opt/ros/foxy/setup.bash
           rosdep update
-          rosdep install --from-paths /root/ros2_weather_ws/src --ignore-src -r -y
-        shell: bash
-
-      - name: Build the package
-        run: |
-          source /opt/ros/foxy/setup.bash
-          cd /root/ros2_weather_ws
-          colcon build --symlink-install
-        shell: bash
-
-      - name: Run tests
-        run: |
-          source /opt/ros/foxy/setup.bash
-          cd /root/ros2_weather_ws/src/weather_pkg/test  # test フォルダに移動
-          python3 -m pytest test_weather_node.py  # 正しいテストファイルを指定
-        shell: bash
+          rosde
 
