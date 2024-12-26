@@ -1,45 +1,13 @@
-name: Test Weather Node
-
-on:
-  push:
-    branches:
-      - main  # mainブランチへのプッシュ時に実行
-  pull_request:
-    branches:
-      - main  # mainブランチへのPR時に実行
-
+name: test
+on: push
 jobs:
-  test:
-    runs-on: ubuntu-22.04  # Ubuntu 22.04環境で実行
-
-    container: ryuichiueda/ubuntu22.04-ros2:latest  # ROS2がインストールされたコンテナを使用
-
-    steps:
-      # リポジトリのコードをチェックアウト
-      - uses: actions/checkout@v2
-
-      # ビルドとテストを実行
-      - name: Build and Test
-        run: |
-          # ROS2ワークスペースのディレクトリを作成
-          mkdir -p /root/ros2_weather_ws/src/weather_pkg/
-
-          # リポジトリ内のコードをコンテナ内にコピー
-          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
-
-          # 作業ディレクトリに移動
-          cd /root/ros2_weather_ws
-
-          # rosdepで依存関係をインストール
-          rosdep update
-          rosdep install --from-paths src --ignore-src -r -y
-
-          # ROS2ワークスペースをビルド
-          colcon build
-
-          # test.bashスクリプトを実行して、ノードのテストを行う
-          bash ./src/weather_pkg/test/test.bash
-
-          # テスト結果の表示
-          colcon test-result --verbose
-
+        test:
+                runs-on: ubuntu-22.04
+                container: ryuichiueda/ubuntu22.04-ros2:latest
+                steps:
+                        - uses: actions/checkout@v2
+                          - name: build and test
+                            run: |
+                                     rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+                                     cd /root/ros2_weather_ws
+                                     bash -xv ./src/ros2_weather_ws/test/test.bash /root
