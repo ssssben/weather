@@ -19,7 +19,12 @@ jobs:
           rosdep update  # 更新
       - name: Build and test
         run: |
-          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/  # リポジトリの内容をコンテナ内にコピー
+          # /root/ros2_weather_ws/src/weather_pkg/ディレクトリを作成
+          mkdir -p /root/ros2_weather_ws/src/weather_pkg
+          
+          # リポジトリの内容をコンテナ内にコピー
+          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+
           cd /root/ros2_weather_ws
           rosdep install --from-paths src --ignore-src -r -y  # 必要な依存関係をインストール
           colcon build  # ビルドを実行（もし必要であれば）
