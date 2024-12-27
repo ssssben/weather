@@ -33,9 +33,19 @@ jobs:
           mkdir -p /root/ros2_weather_ws/src
         shell: bash
 
+      - name: Verify test directory before copying
+        run: |
+          ls -l /root/ros2_weather_ws/src/weather_pkg/test  # ここでテストディレクトリの存在を確認
+        shell: bash
+
       - name: Copy source code to workspace
         run: |
-          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+          rsync -av ./src/weather_pkg/ /root/ros2_weather_ws/src/weather_pkg/  # test フォルダが正しくコピーされるように確認
+        shell: bash
+
+      - name: Verify test directory after copying
+        run: |
+          ls -l /root/ros2_weather_ws/src/weather_pkg/test  # コピー後のディレクトリ内容を確認
         shell: bash
 
       - name: Install dependencies
@@ -50,11 +60,6 @@ jobs:
           source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
           colcon build --symlink-install
-        shell: bash
-
-      - name: Verify test files exist
-        run: |
-          ls -l /root/ros2_weather_ws/src/weather_pkg/test  # testディレクトリ内のファイルを確認
         shell: bash
 
       - name: Run tests
