@@ -3,13 +3,11 @@ project(weather_pkg)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
+find_package(std_msgs REQUIRED)
 
-ament_python_install_package()
+ament_python_install_package(${PROJECT_NAME})
 
-ament_add_pytest_test(test_weather_node
-  TEST_SOURCES
-    src/weather_pkg/test/test_weather_node.py
-)
+ament_add_pytest_test(test_weather_node)
 
 ament_package()
 

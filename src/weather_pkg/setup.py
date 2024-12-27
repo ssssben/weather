@@ -10,7 +10,7 @@ setup(
         ('share/ament_index/resource_index/ament_libraries', ['resource/weather_pkg']),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools', 'rclpy', 'requests'],
+    install_requires=['setuptools', 'rclpy', 'requests', 'pytest'],
     zip_safe=True,
     maintainer='Bun',
     maintainer_email='vlongbf@gmail.com',

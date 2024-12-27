@@ -1,0 +1,2 @@
+Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '1': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
