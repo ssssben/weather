@@ -19,6 +19,7 @@ jobs:
 
       - name: build and test
         run: |
+          mkdir -p /root/ros2_weather_ws/src/weather_pkg
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
           cd /root/ros2_weather_ws
           bash -xv ./src/weather_pkg/test/test.bash /root
