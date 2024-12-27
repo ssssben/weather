@@ -1,5 +1,5 @@
 name: test
-on: 
+on:
   push:
     branches:
       - main
@@ -11,6 +11,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install ROS 2 dependencies
+        run: |
+          apt-get update
+          apt-get install -y python3-colcon-common-extensions python3-rosdep
+          rosdep init
+          rosdep update
 
       - name: Install rsync
         run: |
