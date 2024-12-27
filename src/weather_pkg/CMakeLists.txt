@@ -5,9 +5,14 @@ find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 
-install(PROGRAMS
-  weather_pkg/weather_node.py  # 正しいディレクトリパスに変更
-  DESTINATION lib/${PROJECT_NAME}
+install(
+  DIRECTORY weather_pkg
+  DESTINATION lib/python3.8.10/site-packages
+)
+
+install(
+  PROGRAMS weather_pkg/weather_node.py
+  DESTINATION lib/weather_pkg
 )
 
 ament_package()

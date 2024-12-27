@@ -1,16 +1,29 @@
-import pytest
-import rclpy
+import unittest
+from unittest.mock import patch
 from weather_pkg.weather_node import WeatherNode
-from std_msgs.msg import String
 
-@pytest.fixture
-def weather_node():
-    rclpy.init()
-    node = WeatherNode()
-    yield node
-    node.destroy_node()
-    rclpy.shutdown()
+class TestWeatherNode(unittest.TestCase):
 
-def test_publish_weather(weather_node):
-    assert isinstance(weather_node.publisher_, rclpy.publisher.Publisher)
+    @patch('weather_pkg.weather_node.requests.get')
+    def test_get_weather(self, mock_get):
+        mock_response = {
+            'main': {'temp': 25.0},
+            'weather': [{'description': 'clear sky'}]
+        }
+        mock_get.return_value.status_code = 200
+        mock_get.return_value.json.return_value = mock_response
+
+        node = WeatherNode()
+        city = "Tokyo"
+        result = node.get_weather(city)
+        expected = "Weather in Tokyo: 25.0°C, Clear sky"
+        self.assertEqual(result, expected)
+
+    def test_missing_api_key(self):
+        with patch.dict('os.environ', {'OPENWEATHERMAP_API_KEY': ''}):
+            with self.assertRaises(SystemExit):
+                WeatherNode()
+
+if __name__ == '__main__':
+    unittest.main()
 
