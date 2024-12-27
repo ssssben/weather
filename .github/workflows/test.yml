@@ -17,14 +17,14 @@ jobs:
         run: |
           apt-get update
           apt-get install -y rsync python3-pip
-        python3 -m pip install --upgrade pip
-          python3 -m pip install pytest
+          python3 -m pip install --upgrade pip  # pipを最新にアップグレード
+          python3 -m pip install pytest  # pytestをインストール
         shell: bash
 
       - name: Check pytest installation
         run: |
-          python3 -m pytest --version || echo "pytest not found"
-          pip3 list
+          python3 -m pytest --version || echo "pytest not found"  # pytestバージョン確認
+          pip3 list  # インストールされたパッケージをリスト表示
         shell: bash
 
       - name: Set up ROS 2 workspace
@@ -52,10 +52,15 @@ jobs:
           colcon build --symlink-install
         shell: bash
 
+      - name: Verify test files exist
+        run: |
+          ls -l /root/ros2_weather_ws/src/weather_pkg/test  # testディレクトリ内のファイルを確認
+        shell: bash
+
       - name: Run tests
         run: |
           source /opt/ros/foxy/setup.bash
           cd /root/ros2_weather_ws
-          ls -l src/weather_pkg/test 
-          python3 -m pytest src/weather_pkg/test/test_weather_node.py 
+          python3 -m pytest src/weather_pkg/test/test_weather_node.py  # 正しいパスに修正
         shell: bash
+
