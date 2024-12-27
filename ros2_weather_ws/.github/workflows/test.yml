@@ -9,13 +9,9 @@ jobs:
 
       - name: Set up ROS 2
         run: |
-          sudo apt update
-          sudo apt install -y python3-colcon-common-extensions
-          sudo apt install -y python3-rosdep
-          sudo apt install -y python3-pip
-          sudo pip3 install -U setuptools
-          rosdep update
-      
+          apt-get update
+          apt-get install git -y
+                 
       - name: build and test
         run: |
           rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
