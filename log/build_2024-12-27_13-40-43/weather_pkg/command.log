@@ -1,0 +1,4 @@
+Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg
+Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '1': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg

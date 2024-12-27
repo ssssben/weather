@@ -1,0 +1,18 @@
+[0.011s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[0.037s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[0.042s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg
+[0.048s] -- Install configuration: ""
+[0.049s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.sh
+[0.049s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.dsv
+[0.049s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg
+[0.049s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/weather_node.py
+[0.049s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/.gitignore
+[0.049s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/__init__.py
+[0.066s] Listing '/home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg'...
+[0.068s] CMake Error at cmake_install.cmake:61 (file):
+[0.068s]   file INSTALL cannot find
+[0.068s]   "/home/bun/ros2_weather_ws/src/weather_pkg/scripts/weather_node.py": No
+[0.068s]   such file or directory.
+[0.068s] 
+[0.068s] 
+[0.070s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '1': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg

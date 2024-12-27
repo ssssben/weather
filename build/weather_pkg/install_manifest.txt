@@ -1,0 +1,16 @@
+/home/bun/ros2_weather_ws/install/weather_pkg/lib/weather_pkg/weather_node.py
+/home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/package_run_dependencies/weather_pkg
+/home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/parent_prefix_path/weather_pkg
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/ament_prefix_path.sh
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/ament_prefix_path.dsv
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/path.sh
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/path.dsv
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.bash
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.sh
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.zsh
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.dsv
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/package.dsv
+/home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/packages/weather_pkg
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/cmake/weather_pkgConfig.cmake
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/cmake/weather_pkgConfig-version.cmake
+/home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/package.xml

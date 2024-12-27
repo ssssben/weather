@@ -1,0 +1,23 @@
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bun/ros2_weather_ws/build/weather_pkg
+-- Install configuration: ""
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/weather_pkg/weather_node.py
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/package_run_dependencies/weather_pkg
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/parent_prefix_path/weather_pkg
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/ament_prefix_path.sh
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/path.sh
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/path.dsv
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.bash
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.sh
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.zsh
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.dsv
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/package.dsv
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/packages/weather_pkg
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/cmake/weather_pkgConfig.cmake
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/cmake/weather_pkgConfig-version.cmake
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/package.xml

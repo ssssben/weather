@@ -1,0 +1,14 @@
+-- Install configuration: ""
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.sh
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.dsv
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/weather_node.py
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/.gitignore
+-- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/__init__.py
+Listing '/home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg'...
+CMake Error at cmake_install.cmake:61 (file):
+  file INSTALL cannot find
+  "/home/bun/ros2_weather_ws/src/weather_pkg/scripts/weather_node.py": No
+  such file or directory.
+
+

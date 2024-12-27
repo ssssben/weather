@@ -1,0 +1,31 @@
+[0.010s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[0.018s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.031s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.134s] -- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+[0.134s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[0.202s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.203s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.943s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.968s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[2.440s] -- Configuring done
+[2.441s] -- Generating done
+[2.442s] -- Build files have been written to: /home/bun/ros2_weather_ws/build/weather_pkg
+[2.446s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[2.449s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[2.473s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[2.484s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg
+[2.489s] -- Install configuration: ""
+[2.489s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.sh
+[2.489s] -- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.dsv
+[2.489s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg
+[2.489s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/weather_node.py
+[2.489s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/.gitignore
+[2.489s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/__init__.py
+[2.507s] Listing '/home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg'...
+[2.510s] CMake Error at cmake_install.cmake:61 (file):
+[2.510s]   file INSTALL cannot find
+[2.510s]   "/home/bun/ros2_weather_ws/src/weather_pkg/scripts/weather_node.py": No
+[2.510s]   such file or directory.
+[2.510s] 
+[2.510s] 
+[2.511s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '1': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg

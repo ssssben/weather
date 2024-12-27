@@ -1,0 +1,19 @@
+[0.011s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[0.019s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.033s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.134s] -- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+[0.169s] -- Configuring done
+[0.170s] -- Generating done
+[0.171s] -- Build files have been written to: /home/bun/ros2_weather_ws/build/weather_pkg
+[0.175s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[0.175s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[0.198s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[0.207s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg
+[0.212s] -- Install configuration: ""
+[0.212s] CMake Error at cmake_install.cmake:41 (file):
+[0.212s]   file INSTALL cannot find
+[0.212s]   "/home/bun/ros2_weather_ws/src/weather_pkg/scripts/weather_node.py": No
+[0.212s]   such file or directory.
+[0.212s] 
+[0.212s] 
+[0.214s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '1': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg

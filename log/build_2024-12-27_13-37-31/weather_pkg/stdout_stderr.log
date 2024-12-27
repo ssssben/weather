@@ -1,0 +1,27 @@
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+-- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bun/ros2_weather_ws/build/weather_pkg
+-- Install configuration: ""
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.sh
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/pythonpath.dsv
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/weather_node.py
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/.gitignore
+-- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/__init__.py
+Listing '/home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg'...
+Compiling '/home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/__init__.py'...
+Compiling '/home/bun/ros2_weather_ws/install/weather_pkg/lib/python3.8/site-packages/weather_pkg/weather_node.py'...
+CMake Error at cmake_install.cmake:61 (file):
+  file INSTALL cannot find
+  "/home/bun/ros2_weather_ws/src/weather_pkg/scripts/weather_node.py": No
+  such file or directory.
+
+

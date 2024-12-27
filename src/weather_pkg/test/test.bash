@@ -1,11 +1,12 @@
 #!/bin/bash
 
-source /opt/ros/foxy/setup.bash
+dir=~
+[ "$1" != "" ] && dir="$1"
 
-rosdep update
-rosdep install --from-paths src --ignore-src -r -y
+cd $dir/ros2_weather_ws
+colcon build
+source $dir/.bashrc
+timeout 30 python3 ~/ros2_weather_ws/src/weather_pkg/weather_pkg/weather_node.py > /tmp/mypkg.log
 
-colcon build --symlink-install
-
-python3 -m pytest src/weather_pkg/test/test_weather_node.py
-
+cat /tmp/mypkg.log |
+grep 'Weather in Dalian'

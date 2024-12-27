@@ -1,0 +1,33 @@
+[0.014s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[0.022s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.038s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.138s] -- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+[0.139s] -- Found ament_cmake_pytest: 0.9.12 (/opt/ros/foxy/share/ament_cmake_pytest/cmake)
+[0.455s] -- Configuring done
+[0.456s] -- Generating done
+[0.458s] -- Build files have been written to: /home/bun/ros2_weather_ws/build/weather_pkg
+[0.459s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake /home/bun/ros2_weather_ws/src/weather_pkg -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/bun/ros2_weather_ws/install/weather_pkg
+[0.462s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[0.485s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake --build /home/bun/ros2_weather_ws/build/weather_pkg -- -j8 -l8
+[0.493s] Invoking command in '/home/bun/ros2_weather_ws/build/weather_pkg': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg
+[0.497s] -- Install configuration: ""
+[0.497s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/weather_pkg
+[0.497s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/weather_pkg/weather_node.py
+[0.497s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/weather_pkg/.gitignore
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/lib/weather_pkg/__init__.py
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/package_run_dependencies/weather_pkg
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/parent_prefix_path/weather_pkg
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/ament_prefix_path.sh
+[0.498s] -- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/ament_prefix_path.dsv
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/path.sh
+[0.498s] -- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/environment/path.dsv
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.bash
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.sh
+[0.498s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.zsh
+[0.498s] -- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/local_setup.dsv
+[0.499s] -- Installing: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/package.dsv
+[0.499s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/ament_index/resource_index/packages/weather_pkg
+[0.499s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/cmake/weather_pkgConfig.cmake
+[0.499s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/cmake/weather_pkgConfig-version.cmake
+[0.499s] -- Up-to-date: /home/bun/ros2_weather_ws/install/weather_pkg/share/weather_pkg/package.xml
+[0.500s] Invoked command in '/home/bun/ros2_weather_ws/build/weather_pkg' returned '0': /usr/bin/cmake --install /home/bun/ros2_weather_ws/build/weather_pkg
