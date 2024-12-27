@@ -1,0 +1,25 @@
+[0.475s] Invoking command in '/home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg': PYTHONPATH=/home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg/build --no-deps symlink_data
+[0.610s] running develop
+[0.682s] running egg_info
+[0.682s] creating weather_pkg.egg-info
+[0.682s] writing weather_pkg.egg-info/PKG-INFO
+[0.682s] writing dependency_links to weather_pkg.egg-info/dependency_links.txt
+[0.683s] writing entry points to weather_pkg.egg-info/entry_points.txt
+[0.683s] writing requirements to weather_pkg.egg-info/requires.txt
+[0.683s] writing top-level names to weather_pkg.egg-info/top_level.txt
+[0.688s] writing manifest file 'weather_pkg.egg-info/SOURCES.txt'
+[0.708s] reading manifest file 'weather_pkg.egg-info/SOURCES.txt'
+[0.708s] writing manifest file 'weather_pkg.egg-info/SOURCES.txt'
+[0.729s] running build_ext
+[0.730s] Creating /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/lib/python3.8/site-packages/site.py
+[0.731s] Creating /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/lib/python3.8/site-packages/weather-pkg.egg-link (link to .)
+[0.732s] Installing weather_note script to /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/lib/weather_pkg
+[0.732s] 
+[0.732s] Installed /home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg
+[0.732s] running symlink_data
+[0.732s] creating /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/share/ament_index
+[0.732s] creating /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/share/ament_index/resource_index
+[0.733s] creating /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/share/ament_index/resource_index/packages
+[0.733s] symbolically linking /home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg/resource/weather_pkg -> /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/share/ament_index/resource_index/packages
+[0.733s] symbolically linking /home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg/package.xml -> /home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/share/weather_pkg
+[0.753s] Invoked command in '/home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg' returned '0': PYTHONPATH=/home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bun/ros2_weather_ws/src/weather_pkg/install/weather_pkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/bun/ros2_weather_ws/src/weather_pkg/build/weather_pkg/build --no-deps symlink_data
