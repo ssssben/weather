@@ -1,0 +1,23 @@
+name: test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    container: ryuichiueda/ubuntu22.04-ros2:latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up ROS 2
+        run: |
+          sudo apt update
+          sudo apt install -y python3-colcon-common-extensions
+          sudo apt install -y python3-rosdep
+          sudo apt install -y python3-pip
+          sudo pip3 install -U setuptools
+          rosdep update
+      
+      - name: build and test
+        run: |
+          rsync -av ./ /root/ros2_weather_ws/src/weather_pkg/
+          cd /root/ros2_weather_ws
+          bash -xv ./src/weather_pkg/test/test.bash /root
