@@ -1,3 +1,0 @@
-[console_scripts]
-weather_note = weather_pkg.weather_note:main
-
